@@ -1,0 +1,10 @@
+{% extends 'Layout/base.html.twig' %}
+
+{% block body %}
+    {% for crocodile in crocodiles %}
+        <h1>{{ crocodile.id }} - {{ crocodile.name }} - {{ crocodile.age }} ans</h1>
+        <p>{{ crocodile.commentQuIlEst|json_encode }}</p>
+        <a href="{{ path('app_crocodile_update', {'id': crocodile.id}) }}">Modifier</a>
+        <a href="{{ path('app_crocodile_delete', {'id': crocodile.id}) }}">Supprimer</a>
+    {% endfor %}
+{% endblock body %}

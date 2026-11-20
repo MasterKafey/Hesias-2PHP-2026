@@ -1,0 +1,5 @@
+{% extends 'Layout/base.html.twig' %}
+
+{% block body %}
+    Validez votre compte <a href="{{ absolute_url(path('app_user_validate_account', {'value': token.value})) }}">ici</a>
+{% endblock %}
